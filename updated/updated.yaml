@@ -7,7 +7,7 @@ metadata:
 spec:
     replicas: 3
     selector:
-        matchLables:
+        matchLabels:
             app: octopus
     template:
         metadata:
@@ -40,7 +40,7 @@ metadata:
 spec:
     replicas: 3
     selector:
-        matchLables:
+        matchLabels:
             app: pangolin
     template:
         metadata:
