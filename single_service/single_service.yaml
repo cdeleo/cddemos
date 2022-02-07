@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: octopus
+    labels:
+        app: octopus
+spec:
+    replicas: 3
+    selector:
+        matchLables:
+            app: octopus
+    template:
+        metadata:
+            labels:
+                app: octopus
+        spec:
+            containers:
+                - name: octopus-echoserver
+                  image: k8s.gcr.io/echoserver:1.4
+                  ports:
+                    - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: octopus
+spec:
+    selector:
+        app: octopus
+    ports:
+        - protocol: TCP
+          port: 8080
