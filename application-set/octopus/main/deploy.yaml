@@ -5,7 +5,6 @@ metadata:
     labels:
         app: octopus
 spec:
-    replicas: 1
     selector:
         matchLabels:
             app: octopus
